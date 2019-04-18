@@ -28,24 +28,28 @@ CREATE TABLE studios (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE appointments (
-  id int NOT NULL AUTO_INCREMENT,
-  name varchar(60) NOT NULL,
-  phone varchar(30) NOT NULL,
-  apptDate DATETIME,
-  studio int,
-  FOREIGN KEY (studio) REFERENCES studios(id),
-  PRIMARY KEY (ID)
-);
-
-CREATE TABLE users(
-user_id int AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE users (
+id int AUTO_INCREMENT PRIMARY KEY,
 email varchar(300),
 name varchar(200),
 provider varchar(50),
 provider_id varchar(200),
 provider_pic varchar(200),
-token varchar(500));
+token varchar(500))
+;
+
+CREATE TABLE appointments (
+  id int NOT NULL AUTO_INCREMENT,
+  size varchar(60),
+  bodyPart varchar(60),
+  apptDate DATETIME,
+  studio int,
+  FOREIGN KEY (studio) REFERENCES studios(id),
+  PRIMARY KEY (ID),
+  name int,
+  FOREIGN KEY (name) REFERENCES users(id)
+);
+
 
 INSERT INTO styles (style,info) VALUES ("Old School","Old School style Tattoos (and Old Skool) become popular in 1920's. The main characteristics of the old school design are large anJapanese tattoos have an ancient tradition, but their connotation has almost always been associated with the criminal world. They were in fact used to mark criminals for life. The famous Yakuza drew from the tradition of tattoo making a real signature, so that even today, many public places prohibit the entry of tattooed people. Only a few years ago that the traditional Japanese tattoo (irezumi) found its definitive consecration breaking through the boundaries of the country and flooding around the world.
 The subjects used range from animals, mythological demons, the koi carp and, fod bold images made with solid colours and thick outlines in either blue or black. The reason for the big and bold designs can mainly be attributed to the fact that the techniques used to create the tattoos are very different than those used today. Because the quality of the machines and the ink were not very good, the designs were kept simple and bold so they would wear well over time.
@@ -87,4 +91,4 @@ INSERT INTO studios (name, address, styleID) VALUES ("north tattoo", "DIVISION D
 
 INSERT INTO studios (name, address, styleID) VALUES ("daggamx", "Orizaba 203 col. Roma, Mexico city", 3);
 
-INSERT INTO studios (name, address, styleID) VALUES ("nauyaca_mx", s"Nauyaca, Avenida 5 de Mayo 29", 4);
+INSERT INTO studios (name, address, styleID) VALUES ("nauyaca_mx", "Nauyaca, Avenida 5 de Mayo 29", 4);
