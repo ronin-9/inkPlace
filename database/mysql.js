@@ -69,7 +69,6 @@ const getApp = cb => {
     });
 };
 
-
 module.exports = {
 getStyles,
 getInfoByStyle,
