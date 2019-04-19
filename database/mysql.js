@@ -6,24 +6,49 @@ const mysql = require('mysql2');
 const config = {
   host: 'localhost',
   user: 'root',
-  password: 'password',
-  database: 'yourDB',
+  password: 'Holacode',
+  database: 'inkPlace',
 };
 
 const connection = mysql.createConnection(config);
 
 //Example mysql query using Promises
-const sampleQuery = function() {
-  return new Promise((resolve, reject) => {
-    connection.query('SELECT * FROM table', (err, data) => {
+const getStyles = cb => {
+  connection.query("SELECT style FROM styles",
+    (err, results,fields) => {
+      if(err){
+        throw err;
+      }else{
+        cb(results)
+      }
+    });
+};
+
+const getInfoByStyle = cb => {
+  return new Promise ((resolve, reject) => {
+    connection.query("SELECT info FROM styles", (err, results) => {
       if (err) {
         return reject(err);
       }
-      return resolve(data);
-    });
+      return resolve(results);
+    })
+  });
+};
+
+
+const imagesByStyle = cb => {
+  return new Promise ((resolve, reject) => {
+    connection.query("SELECT url FROM images", (err, results) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(results);
+    })
   });
 };
 
 module.exports = {
-  sampleQuery,
+getStyles,
+getInfoByStyle,
+imagesByStyle ,
 };
