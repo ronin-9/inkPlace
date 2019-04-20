@@ -19,6 +19,7 @@ const App = () => (
     <div className="row">
       <div className="col-md-4"></div>
       <div className="col-md-4">
+        <h1>Ink Place </h1>
         <Select options={ techCompanies } />
       </div>
       <div className="col-md-4"></div>
