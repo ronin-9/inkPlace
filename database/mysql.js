@@ -47,8 +47,32 @@ const imagesByStyle = cb => {
   });
 };
 
+const getUser = cb => {
+  connection.query("INSERT INTO users (email,name) VAlUES ? ",
+    (err, results,fields) => {
+      if(err){
+        throw err;
+      }else{
+        cb(results)
+      }
+    });
+};
+
+const getApp = cb => {
+  connection.query("INSERT INTO appointments (size, bodypart, apptDate) VAlUES ? ",
+    (err, results,fields) => {
+      if(err){
+        throw err;
+      }else{
+        cb(results)
+      }
+    });
+};
+
 module.exports = {
 getStyles,
 getInfoByStyle,
 imagesByStyle ,
+getUser,
+getApp
 };
