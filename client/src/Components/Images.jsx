@@ -4,7 +4,7 @@ import Image from 'react-image-resizer';
 const style = {
   img: {
     background: '#fefefe',
-    position: 'relative', left: '0%', top: '100%',
+    position: 'absolute', left: '30%', top: '40%',
     display: 'inline'
   },
 };
@@ -12,7 +12,7 @@ const style = {
 const style1 = {
   img: {
     background: '#fefefe',
-    position: 'relative', left: '30%', top: '40%',
+    position: 'absolute', left: '40%', top: '40%',
     display: 'inline'
   },
 };
@@ -20,7 +20,7 @@ const style1 = {
 const style2 = {
   img: {
     background: '#fefefe',
-    position: 'relative', left: '50%', top: '40%',
+    position: 'absolute', left: '50%', top: '40%',
     display: 'inline'
   },
 };
@@ -28,7 +28,7 @@ const style2 = {
 const style3 = {
   img: {
     background: '#fefefe',
-    position: 'relative', left: '70%', top: '40%',
+    position: 'absolute', left: '60%', top: '40%',
     display: 'inline'
   },
 };
