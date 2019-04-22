@@ -2,38 +2,71 @@ import React from 'react';
 import Img from 'react-image';
 import Image from 'react-image-resizer';
 const style = {
-  image: {
-    border: '1px solid #ccc',
+  img: {
     background: '#fefefe',
-    justifyContent: 'center',
-    alignItems: 'center',
+    position: 'relative', left: '0%', top: '100%',
+    display: 'inline'
+  },
+};
+
+const style1 = {
+  img: {
+    background: '#fefefe',
+    position: 'relative', left: '30%', top: '40%',
+    display: 'inline'
+  },
+};
+
+const style2 = {
+  img: {
+    background: '#fefefe',
+    position: 'relative', left: '50%', top: '40%',
+    display: 'inline'
+  },
+};
+
+const style3 = {
+  img: {
+    background: '#fefefe',
+    position: 'relative', left: '70%', top: '40%',
+    display: 'inline'
   },
 };
 class Images extends React.Component {
     render() {
        return(
-        <div> 
-            <h1>BlackWork</h1> 
+        <div > 
+          <div style={style.img}>
+            <h4 >BlackWork</h4> 
         <img height={ 100 }
-          width={ 100} style={style.img} src={
+          width={ 100} src={
       require('../blackwork/body.jpg')
     }></img>
-    
-        <h1>OldSchool</h1>
+          </div>
+
+          <div style={style1.img}>
+        <h4>OldSchool</h4>
         <img height={ 100 }
-          width={ 100} style={style.img} src={[
+          width={ 100}  src={[
       require('../oldSchool/one.jpg'),
     ]}></img>
-        <h1>Tribal</h1>
+          </div>
+
+          <div style={style2.img}>
+        <h4>Tribal</h4>
         <img height={ 100 }
-          width={ 100} style={style.img} src={[
+          width={ 100}  src={[
       require('../tribal/one.jpg'),
     ]}></img>
-        <h1>Japanese</h1>
+          </div>
+
+          <div style={style3.img}>
+        <h4>Japanese</h4>
         <img height={ 100 }
-          width={ 100} style={style.img} src={[
+          width={ 100} src={[
       require('../japanese/back.jpg'),
     ]}></img>
+          </div>
         </div>
        );
 
