@@ -4,7 +4,7 @@ import App from './App';
 import Users from './Components/Users.jsx';
 import Contact from './Components/Contact.jsx';
 import { Route, Link, BrowserRouter as Router} from 'react-router-dom';
-
+import Images from './Components/Images.jsx'
 
 
 const routing = (
@@ -21,7 +21,8 @@ const routing = (
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-        <Route exact path="/" component={App} />
+        <Route exact path="/" component={App}/>
+        <Route exact path="/" component={Images}/>
         <Route path="/users" component={Users} />
         <Route path="/contact" component={Contact} />
       </div>
